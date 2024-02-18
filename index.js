@@ -17,9 +17,9 @@ window.addEventListener('load', () => {
   })
 
   window.addEventListener('mouseout', () => {
-    if (!inside) {
-      container.style.transition = 'background-position 0.5s ease'
+    if (inside) {
       container.style.backgroundPosition = 'center'
+      container.style.transition = 'background-position 0.5s ease'
     }
   })
 
