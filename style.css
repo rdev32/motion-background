@@ -5,7 +5,8 @@
 }
 
 .container {
-  background: url('https://getwallpapers.com/wallpaper/full/f/7/5/327959.jpg');
+  /*background: url('https://getwallpapers.com/wallpaper/full/f/7/5/327959.jpg');*/
+  background: url('https://github.com/rdev32/food-menu-app/blob/main/src/assets/landing.jpg?raw=true');
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
