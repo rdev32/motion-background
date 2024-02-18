@@ -1,18 +1,35 @@
 window.addEventListener('load', () => {
-  const container = document.querySelector('.container');
+  const container = document.querySelector('.container')
+  let inside = true
 
   container.addEventListener('mousemove', (e) => {
-    const mouseX = e.pageX - container.offsetLeft;
-    const mouseY = e.pageY - container.offsetTop;
+    const mouseX = e.pageX - container.offsetLeft
+    const mouseY = e.pageY - container.offsetTop
 
-    const containerWidth = container.offsetWidth;
-    const containerHeight = container.offsetHeight;
+    const containerWidth = container.offsetWidth
+    const containerHeight = container.offsetHeight
 
-    const posX = (mouseX / containerWidth) * 100;
-    const posY = (mouseY / containerHeight) * 100;
+    const posX = (mouseX / containerWidth) * 30
+    const posY = (mouseY / containerHeight) * 30
 
-    container.style.transition = 'background-position 0.5s ease';
-    container.style.backgroundPosition = `${posX}% ${posY}%`;
-  });
-});
+    container.style.transition = 'background-position 0.5s ease'
+    container.style.backgroundPosition = `${posX}% ${posY}%`
+  })
+
+  window.addEventListener('mouseout', () => {
+    if (!inside) {
+      container.style.transition = 'background-position 0.5s ease'
+      container.style.backgroundPosition = 'center'
+    }
+  })
+
+  container.addEventListener('mouseenter', () => {
+    inside = true
+  })
+
+  container.addEventListener('mouseleave', () => {
+    inside = false
+  })
+
+})
 
